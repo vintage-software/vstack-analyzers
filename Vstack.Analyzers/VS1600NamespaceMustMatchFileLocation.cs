@@ -8,14 +8,14 @@ using System.Linq;
 namespace Vstack.Analyzers
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    public class VS1300NamespaceMustMatchFileLocation : DiagnosticAnalyzer
+    public class VS1600NamespaceMustMatchFileLocation : DiagnosticAnalyzer
     {
-        public const string DiagnosticId = "VS1300";
+        public const string DiagnosticId = "VS1600";
 
         private const string Title = "Namespace must match file location.";
         private const string MessageFormat = "Namespace must match file location. Expected '{0}'.";
         private const string Description = "The namespaces must match file location.";
-        private const string Category = "Naming";
+        private const string Category = "Documentation";
 
         private static readonly DiagnosticDescriptor Descriptor = new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description);
 
