@@ -1,13 +1,18 @@
 <?xml version="1.0"?>
-<package >
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <id>$id$</id>
+    <id>Vstack.Analyzers</id>
     <version>$version$</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
-	<licenseUrl>https://github.com/vintage-software/vstack-analyzers/blob/master/LICENSE</licenseUrl>
+    <title>Vstack.Analyzers</title>
+    <authors>Vintage Software, Kevin Phelps</authors>
+    <owners>Vintage Software</owners>
+    <licenseUrl>https://github.com/vintage-software/vstack-analyzers/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/vintage-software/vstack-analyzers</projectUrl>
-    <description>$description$</description>
+    <description>Vstack.Analyzers</description>
   </metadata>
+  <!-- The convention for analyzers is to put language agnostic dlls in analyzers\portable50 and language specific analyzers in either analyzers\portable50\cs or analyzers\portable50\vb -->
+  <files>
+    <file src="*.dll" target="analyzers\dotnet\cs" exclude="**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*;**\System.Composition.*" />
+    <file src="tools\*.ps1" target="tools\" />
+  </files>
 </package>
